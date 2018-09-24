@@ -6,8 +6,18 @@
 </head>
 
 <body>
-    <p>Hello <span th:text="${model.username}">username</span>, and welcome to the application.</p>
+
+    <div th:replace="fragments/menu :: main-menu">main menu goes here</div>
+
+    <p>
+        Hello <span th:text="${model.username}">username</span>, and welcome to the application.
+    </p>
+
     <br>
-<a th:href="@{/profile(id=${model.id},trial=1)}" href="profile.html?id=userId">View my profile</a>
+
+    <a th:href="@{/profile(id=${model.id},trial=1)}" href="profile.html?id=userId">View my profile</a>
+
+    <div th:replace="fragments/menu :: footer-menu">footer menu goes here</div>
+
 </body>
 </html>

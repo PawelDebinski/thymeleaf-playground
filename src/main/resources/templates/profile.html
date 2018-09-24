@@ -7,6 +7,9 @@
 </head>
 
 <body>
+
+    <div th:replace="fragments/menu :: main-menu">main menu goes here</div>
+
     <h1>User Profile</h1>
     <table>
         <tr>
@@ -39,6 +42,7 @@
 
     <p> <a th:href="@{/}" href="homepage.html">Click here</a> to return to the homepage</p>
 
+    <div th:replace="fragments/menu :: footer-menu">footer menu goes here</div>
 
 </body>
 </html>
