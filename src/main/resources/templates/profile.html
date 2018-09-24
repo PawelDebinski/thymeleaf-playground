@@ -29,7 +29,7 @@
 
     <img th:src="@{images/asterix.jpg}" src="asterix.jpg"/>
 
-    <p th:text="${fullname}">Your name</p>
+    <p th:text="${fullname}" style="color:#0f0" th:style="'color:' + ${model.color}">Your name</p>
 
     <h2>Languages spoken</h2>
     <p>You speak <span th:text="${model.languages.size() > 3} ? '3 or more' : ${model.languages.size()}">x</span> languages</p>
