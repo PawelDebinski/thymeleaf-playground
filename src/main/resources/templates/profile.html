@@ -24,6 +24,8 @@
 
     </table>
 
+    <img th:src="@{images/asterix.jpg}" src="asterix.jpg"/>
+
     <h2>Languages spoken</h2>
     <p>You speak <span th:text="${model.languages.size() > 3} ? '3 or more' : ${model.languages.size()}">x</span> languages</p>
 
