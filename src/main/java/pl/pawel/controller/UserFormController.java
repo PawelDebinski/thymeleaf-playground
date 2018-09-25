@@ -25,9 +25,7 @@ public class UserFormController {
 
     @PostMapping("/saveUser")
     public String saveUser(@Valid AddUserModel addUserModel, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()) {
-            return "new-user";
-        }
+
         return "user-added";
     }
 }
