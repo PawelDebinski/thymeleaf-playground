@@ -1,8 +1,10 @@
 package pl.pawel.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
+import pl.pawel.AddUserModel;
 import pl.pawel.CountriesList;
 
 import java.util.Map;
@@ -12,9 +14,11 @@ import java.util.TreeMap;
 public class UserFormController {
 
     @GetMapping("/new-user")
-    public ModelAndView showNewUserForm() {
+    public String showNewUserForm(Model model) {
         Map<String, String> map = CountriesList.getCountries();
+        model.addAttribute("countries", map);
+        model.addAttribute("addUserModel", new AddUserModel());
 
-        return new ModelAndView("new-user", "countries", map);
+        return ("new-user");
     }
 }
