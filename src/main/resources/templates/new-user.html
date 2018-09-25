@@ -1,6 +1,6 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="new-ser.css" />
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head xmlns:th="http://www.thymeleaf.org">
+		<link rel="stylesheet" href="css/new-user.css" th:href="@{css/new-user.css}" />
 	</head>
 	<body>
 		<h1>Add a new user</h1>
@@ -33,7 +33,7 @@
 		
 				</div>
 				
-				<img class="logo" src="asterisk-guy.jpg">
+				<img class="logo" src="asterisk-guy.jpg" th:src="@{images/asterisk-guy.jpg}">
 
 				<div class="fieldSection">
 					<div class="fieldTitle">Address</div>
@@ -47,14 +47,11 @@
 					<input type="text" name="address4" id="address4" placeholder="Address line 4">
 					<br>
 					<input type="text" name="zip" id="zip" placeholder="Zip or Postal Code" required>
-					<br>	
+					<br>
 					<select id="country" name="country" required>
 						<option selected disabled>Country</option>
-						<option value="GBR">Great Britain</option>
-						<option value="FRA">France</option>
-						<option value="USA">United States of America</option>
-						<option value="ETC">etc.</option>
-					</select>							
+						<option th:each="country : ${countries}" th:text="${country.value}" th:value="${country.key}" value="XXX">Country Name</option>
+					</select>
 				</div>
 		
 				<input type="submit" value="Save new user" class="button">
